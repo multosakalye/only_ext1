@@ -5,10 +5,12 @@
   "description": "Hides everything else on the YouTube video page except for the video, centering the viewer.",
   "content_scripts": [
     {
-      "matches": ["*://www.youtube.com/watch*"] ,
+      "matches": ["*://www.youtube.com/watch*"],
       "js": ["content.js"],
-      "run_at": "document_idle"
+      "run_at": "document_start",
+      "all_frames": true
     }
   ],
-  "permissions": []
+  "permissions": ["webNavigation"],
+  "host_permissions": ["*://www.youtube.com/*"]
 } 
